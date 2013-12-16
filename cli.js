@@ -324,8 +324,8 @@ var cli = function(options) {
             sections: file.docs,
             project: { name: options.name, menu: menu },
             resources: {
-              docs: { js: minjs(docsScript), css: mincss(resources.docs.css) },
-              previews: { js: minjs(resources.previews.js), css: mincss(urlsRelative(previewStyles, relativePath)) }
+              docs: { js: docsScript, css: resources.docs.css },
+              previews: { js: resources.previews.js, css: urlsRelative(previewStyles, relativePath) }
             }
           })
         };
@@ -338,7 +338,7 @@ var cli = function(options) {
           sections: styledocco.makeSections([{ docs: resources.readme, code: '' }]),
           project: { name: options.name, menu: menu },
           resources: {
-            docs: { js: minjs(docsScript), css: mincss(resources.docs.css) }
+            docs: { js: docsScript, css: resources.docs.css }
           }
         })
       });
